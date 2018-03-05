@@ -1,0 +1,238 @@
+前言
+
+
+四个项目
+Ottergram	图片浏览应用。
+CoffeeRun	咖啡订购表单及清单。
+Dhattrbox	聊天客户端。
+Tracker		收录珍稀动物。
+
+用到的工具
+Atom文本编辑器和一些方便代码编写的插件
+文档资源，比如Mozilla Developer Network（MDN）
+命令行，使用OS X终端应用或者Windows命令行
+browser-sync
+Google Chrome开发者工具
+normalize.css
+Bootstrap
+jQuery以及库函数，比如crypto-js和moment
+Node.js、Node包管理工具（Node package manager, npm）以及nodemon
+WebSockets和wscat模块
+Babel、Babelify、Browserify以及Watchify
+Ember.js和插件，比如Ember CLI、Ember Inspector、Ember CLI Mirage以及Handlebars
+Bower
+Hombrew
+Watchman
+
+
+
+第一章
+
+第二章
+
+browser-sync start --server --files "*.html, stylesheets/*.css, scripts/*.js"
+browser-sync start --server --browser "Firefox" --files "*.html, stylesheets/*.css, scripts/*.js"
+browser-sync start --server --browser "Chrome" --files "*.html, stylesheets/*.css, scripts/*.js"
+
+搜索"favicon generator"制作favicon.ico
+
+
+第三章
+
+css声明字体：
+@font-face {
+	font-family: 'lakeshore';
+	src: url('fonts/LAKESHOR-webfont.eot');
+	src: url('fonts/LAKESHOR-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('fonts/LAKESHOR-webfont.woff') format('woff'),
+	 		 url('fonts/LAKESHOR-webfont.ttf') format('truetype'),
+	 		 url('fonts/LAKESHOR-webfont.svg#lakeshore') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+第四章
+
+弹性盒布局flex
+在创建第一个flexbox属性前，先将<html>和<body>的高度设置为100%。
+
+
+flex容器
+display: flex;	创建flex容器
+flex-direction: column;	主轴设为垂直方向
+justify-content: space-between;	每个flex项目间隙相等，其他值还有flex-start,flex-end,center,space-around
+
+flex项目
+flex: 0 1 auto;	依次设置flex-grow,flex-shrink,flex-basis：无需进行拉伸，如有必要将会收缩，自动计算大小
+order: 2;	源顺序设为2，默认为0，大的在小的后边
+
+第七章
+
+通过document.body属性访问<body>元素
+通过 classList.add(类名字符串) 添加类,通过 classList.remove(类名字符串) 来删除添加进去的类名。
+
+
+
+第八章 模块、对象和方法
+
+立即调用的函数表达式IIFE：
+(function () {
+	'use strict';
+	//放置要运行的代码
+})();
+
+
+第十章 使用JavaScript处理表单
+
+当使用jQuery的$函数来选择元素时，它并不会像document.querySelectorAll一样返回DOM元素的引用，而是返回单个对象，该对象中会包含对所选元素的引用。这个对象同时具有操作引用集合的特殊方法，被称为“jQuery封装集合”。
+如果未查到任何元素，jQuery将会返回空，不会抛出一个异常。因此需要手动检查。
+
+第十一章 从数据到DOM
+
+CheckList模块3个方法
+第1个负责创建一个清单项，包括复选框和描述文本。可视为table中的一行。
+第2个会从table中移除一行。
+第3个会为单击事件添加一个监听器，从而让代码知道何时需要移除一行。
+
+第十二章 表单校验
+
+无须为布尔属性赋值。如果元素的某个属性是布尔属性，那么无论为它赋予什么值，浏览器均会认为该值为true。
+(function (window) {
+	'use strict';
+
+	var App = window.App || {};
+	
+	var Validation = {  };
+
+	App.Validation = Validation;
+	
+	window.App = App;
+})(window);
+
+(function (window) {
+	'use strict';
+
+	var App = window.App;
+
+	var Validation = App.Validation;
+})(window);
+
+使用event.targe中的setCustomValidity方法将其标记为无效
+
+第二部分
+
+DataStore(){}
+	this.
+		data = {}
+	.prototype.
+		add(key,val){}
+		get(key){}
+		getAll(){}
+		remove(key){}
+
+Truck(truckId,db){}
+	this.
+		truckId = truckId
+		db = db
+	.prototype.
+		createOrder(order){}
+		deliverOrder(customerId){}
+		printOrders(printFn){}
+
+FormHandler(selector){}
+	this.
+		$formElement = $(selector)
+	.prototype.
+		addSubmitHandler(fn){}
+		addInputHandler(fn){}
+
+CheckList(selector){}
+	this.
+		$element = $(selector);
+	.prototype.
+		addClickHandler(fn){}
+		addRow(coffeeOrder){}
+		removeRow(email){}
+
+Validation{}
+	isCompanyEmail(email){}
+
+RemoteDataStore(url){}
+	this.
+		serverUrl = url
+	.prototype.
+		add(key,val){}
+		get(key,cb){}
+		getAll(cb){}
+		remove(key){}	
+
+main.js
+	var myTruck = new Truck('ncc-1701', new DataStore());
+	window.myTruck = myTruck;
+
+	var checkList = new CheckList(CHECKLIST_SELECTOR);
+	checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
+
+	var formHandler = new FormHandler(FORM_SELECTOR);
+	formHandler.addSubmitHandler(function (data) {
+		return myTruck.createOrder.call(myTruck, data)
+			.then(
+				function () {checkList.addRow.call(checkList, data);},
+				function () {alert('Server unreachable. Try again later.');}
+			);
+	});
+	formHandler.addInputHandler(Validation.isCompanyEmail);
+
+	myTruck.printOrders(checkList.addRow.bind(checkList));
+
+
+
+
+Truck
+1. Object.keys()	Object.keys(对象)
+	Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致
+	例子：Object.keys({ foo: "bar", baz: 42 });// ["foo","baz"]	
+2. forEach()	数组.forEach(函数)
+	forEach() 方法对数组的每个元素执行一次提供的函数
+	forEach() 对于空数组是不会执行回调函数
+3. bind()	函数.bind(对象)
+	bind方法接受一个对象实参并返回一个新版本函数。当调用这个新版本函数时，它会在函数内部将对象实参绑定到this上。 
+	在forEach的回调函数中，因为它没有所有者，所以this的值是undefined。可以通过调用bind函数并且传入Truck实例
+	在forEach的回调函数外，this指代Truck实例。在forEach括号内部的匿名函数后马上调用.bind(this)方法，从而将修改过的匿名函数传给forEach。这个修改过的函数的所有者是
+	Truck实例。 
+
+FormHandler
+4. throw(new Error())	throw(new Error(字符串))
+	throw() 方法用来向生成器抛出异常，并恢复生成器的执行，返回带有 done 及 value 两个属性的对象。
+	通过Error的构造器可以创建一个错误对象。当运行时错误产生时，Error的实例对象会被抛出。
+5. $.on ()	$.on('事件','过滤选择器',函数)
+	jQuery的on方法接受一个事件名称，并在事件被触发时执行回调。回调函数应该接受该事件的事件对象。调用event.preventDefault不会触发该事件默认的行为。过滤选择器告知事件处理程序当且仅当事件是包含过滤选择器的元素触发时才执行回调函数
+6. focus()
+	HTMLElement.focus()方法可以设置指定元素获取焦点。
+7. setCustomValidity()
+	元素.setCustomValidity(字符串)
+	HTMLSelectElement.setCustomValidity() 方法设置指定的验证消息为选择元素的自定义验证消息。
+	使用空字符串来表示该元素没有自定义的验证错误。
+
+CheckList
+8. $element.append(row element ,$element)
+	jQuery的append方法将元素连接在一起。此方法接受DOM元素或者jQuery封装集合作为参数，并将其添加为调用者的子元素
+	this.$element.find('').closet('...').remove()
+	使用实例的$element属性来检索它的所有后代元素，后代元素的value属性与邮箱参数要相匹配，对检索到的元素调用closest方法，检索该元素的data-coffee-order属性为"checkbox"的祖先。
+	jQuery的设计允许我们像多步执行一样对一个对象进行多个方法调用，链式调用的要求是前一个方法必须返回jQuery封装对象，以便调用后一个方法。
+RemoteDataStore
+
+$.ajax返回了一个Deferred，它拥有then方法。then方法用于注册一个当Deferred被解析（resolved）时调用的回调函数。当回调函数执行时，它会收到从浏览器返回的相应数据。
+then接受第二个参数，它会在Deferred切换到rejected状态时执行。
+
+promise
+
+
+
+表13-1  常用HTTP状态码 
+状态码  状态文本  描   述 
+200  OK  请求成功 
+400  错误请求  服务器不能理解该请求 
+404  找不到  找不到对应资源，通常是因为文件或路径名不正确 
+500  服务器内部错误  服务器遇到了一个错误，例如在服务器的代码中有一个未处理的异常 
+503  服务器不可用  服务器不能处理该请求，通常是因为服务器过载或者宕机 

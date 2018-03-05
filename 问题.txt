@@ -1,0 +1,51 @@
+第一章
+Atom、VS code不支持xp,处理器不支持win10：改用Sublime Text 3。
+node.js最新版不支持xp：改用node.js 5.12.0
+Google Chrome最新版不支持xp：改用Fire Fox。
+
+第二章
+browser-sync运行失败：环境变量增加NODE值为C:\Program Files\nodejs\node.exe
+
+第三章
+为img标签设置css属性display为block后，li和img之间出现空白：去掉ul的项目符号或将a或li的display设为block。
+
+第四章
+
+将li设为inline-block并固定宽度后，各li高度不同：
+li的width替换为min-width和max-width后，高度仍然不同：
+
+第五章
+
+缩略图改为竖排后水平方向也有滚动条：li的width属性忘记去掉，去掉即可
+
+初级挑战：
+屏幕方向：https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries
+横屏：@media all and (orientation: landscape) {}
+
+窗口足够矮时，大图显示不完整：为body设置最低高度。
+
+第六章
+
+浏览器改用chrome 49。
+完成本章后，点击各个缩略图，大图和缩略图宽度不一：改列表的属性为flex:0 0 auto;大图属性为flex:1 1 auto;
+浏览器在某个宽度时，大图会盖住缩略图一部分：小于768时，大图设置最大高度350px
+延伸阅读
+
+
+第七章
+
+增加缩略图之间的间隔：transform:0.8;调整内外边距；
+
+第十章
+
+高级挑战
+
+第十一章
+
+挑战
+
+第十四章
+
+.then(function () {
+  this.removeRow(email);
+}.bind(this));
