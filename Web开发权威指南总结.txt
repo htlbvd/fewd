@@ -77,6 +77,7 @@ order: 2;	源顺序设为2，默认为0，大的在小的后边
 	//放置要运行的代码
 })();
 
+函数名的首字母大写是JavaScript中约定的构造函数的命名方式
 
 第十章 使用JavaScript处理表单
 
@@ -117,7 +118,7 @@ CheckList模块3个方法
 
 第二部分
 
-DataStore(){}
+DataStore(){}————用于将咖啡订单存储到数据库中
 	this.
 		data = {}
 	.prototype.
@@ -126,7 +127,7 @@ DataStore(){}
 		getAll(){}
 		remove(key){}
 
-Truck(truckId,db){}
+Truck(truckId,db){}————
 	this.
 		truckId = truckId
 		db = db
