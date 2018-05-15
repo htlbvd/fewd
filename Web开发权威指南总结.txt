@@ -284,7 +284,7 @@ npm install --save-dev babel-preset-es2015
 
 19章
 
-安装EmberCLI，Ember脚手架：npm install -g ember-cle@2.4
+安装EmberCLI，Ember脚手架：npm install -g ember-cli@2.4
 npm WARN deprecated exists-sync@0.0.3: Please replace with usage of fs.existsSyn
 c
 npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
@@ -305,4 +305,8 @@ npm WARN deprecated natives@1.1.3: This module relies on Node.js's internals and
 
 浏览器中安装Ember Inspector插件
 
-安装Watchman,通过与浏览器通信，实时更新页面
+安装Watchman,通过与浏览器通信，实时更新页面.windos安装方法：facebook.github.io/watchman/docs/
+install.html
+
+创建一个名叫Tracker的Ember应用。打开终端，切换到项目目录，然后执行：
+ember new tracker
