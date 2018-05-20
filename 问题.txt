@@ -49,3 +49,22 @@ li的width替换为min-width和max-width后，高度仍然不同：
 .then(function () {
   this.removeRow(email);
 }.bind(this));
+第十九章
+安装ember-cli@2.4版本太旧，重新安装ember-cli,
+安装EmberCLI，Ember脚手架：npm install -g ember-cli
+
+npm WARN deprecated exists-sync@0.0.4: Please replace with usage of fs.existsSync
+npm WARN deprecated exists-sync@0.0.3: Please replace with usage of fs.existsSync
+C:\Users\htl\AppData\Roaming\npm\ember -> C:\Users\htl\AppData\Roaming\npm\node_
+modules\ember-cli\bin\ember
+> spawn-sync@1.0.15 postinstall C:\Users\htl\AppData\Roaming\npm\node_modules\ember-cli\node_modules\spawn-sync
+> node postinstall
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\ember-cli\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ ember-cli@3.1.4
+added 717 packages from 404 contributors in 845.023s
+
+创建新项目
+ember new tracker(使用5.6.0版本不要用新版)
+
+app.css改名为app.scss后不起作用。

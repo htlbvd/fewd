@@ -284,21 +284,7 @@ npm install --save-dev babel-preset-es2015
 
 19章
 
-安装EmberCLI，Ember脚手架：npm install -g ember-cli@2.4
-npm WARN deprecated exists-sync@0.0.3: Please replace with usage of fs.existsSyn
-c
-npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
-npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher
- to avoid a RegExp DoS issue
-npm WARN deprecated exists-sync@0.0.4: Please replace with usage of fs.existsSyn
-c
-npm WARN deprecated lodash-node@2.4.1: This package is discontinued. Use lodash@
-^4.0.0.
-npm WARN deprecated graceful-fs@3.0.11: please upgrade to graceful-fs 4 for comp
-atibility with current and future versions of Node.js
-npm WARN deprecated natives@1.1.3: This module relies on Node.js's internals and
- will break at some point. Do not use it, and update to graceful-fs@4.x.
-
+安装EmberCLI，Ember脚手架：npm install -g ember-cli
 
 安装Bower，资源管理工具：npm install -g bower
 
@@ -310,3 +296,12 @@ install.html
 
 创建一个名叫Tracker的Ember应用。打开终端，切换到项目目录，然后执行：
 ember new tracker
+
+
+安装外部库和插件
+
+使用Bower安装Bootstrap
+bower install bootstrap-sass --save
+把他们添加到Ember CLI的构建过程中
+安装ember-cli-sass
+ember install ember-cli-sass
