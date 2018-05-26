@@ -4,18 +4,18 @@ node_modules
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
+tracker/dist
+tracker/tmp
 
 # dependencies
-/node_modules
-/bower_components
+tracker/node_modules
+tracker/bower_components
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
+tracker/.sass-cache
+tracker/connect.lock
+tracker/coverage/*
+tracker/libpeerconnection.log
 npm-debug.log*
 yarn-error.log
 testem.log

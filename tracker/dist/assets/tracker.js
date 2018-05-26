@@ -261,6 +261,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("tracker/app")["default"].create({"name":"tracker","version":"0.0.0+8de2a845"});
+  require("tracker/app")["default"].create({"name":"tracker","version":"0.0.0+4751362b"});
 }
 //# sourceMappingURL=tracker.map
