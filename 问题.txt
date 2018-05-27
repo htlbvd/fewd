@@ -69,3 +69,13 @@ ember new tracker(使用5.6.0版本不要用新版)
 
 app.css改名为app.scss后不起作用。
 解决：app.scss改为app.sass
+修改.gitignore后重新提交tracker,ember s错误，将app.sass重新改为app.scss后成功。
+23
+神秘生物详情页不显示图片，解决：模板路径前加“/”
+
+Ember.Handlebars.SafeString is not a constructor:
+暂未解决，将return new Ember.Handlebars.SafeString('<span class="text-primary">' + formatted + '</span>');
+改为return formatted;暂时不使用SafeString函数
+
+
+

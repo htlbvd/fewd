@@ -305,3 +305,27 @@ bower install bootstrap-sass --save
 把他们添加到Ember CLI的构建过程中
 安装ember-cli-sass
 ember install ember-cli-sass
+
+20
+现在通过ember generate命令创建这些路由。打开终端，进入到tracker目录，依次执行以下命令（每次一行）创建路由：
+ember g route index
+ember g route sightings
+ember g route sightings/index
+ember g route sightings/new
+ember g route sighting
+ember g route sighting/index
+ember g route sighting/edit
+ember g route cryptids
+ember g route cryptid
+ember g route witnesses
+ember g route witness
+21
+ember g model cryptid
+ember g model sighting
+ember g model witness
+22
+ember g adapter application
+23
+bower install moment --save
+
+ember g helper moment-from
