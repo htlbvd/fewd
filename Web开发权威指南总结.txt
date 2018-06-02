@@ -329,3 +329,6 @@ ember g adapter application
 bower install moment --save
 
 ember g helper moment-from
+24
+ember install emberx-select
+ember g controller sightings/new
