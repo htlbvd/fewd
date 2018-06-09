@@ -78,10 +78,8 @@ Ember.Handlebars.SafeString is not a constructor:
 改为return formatted;暂时不使用SafeString函数
 
 24
-When installing with ember install emberx-select on page 386 use ember install emberx-select@2.2.3
 
 this.get(...) is not a function
-x-select版本太新
 templates/sightings/new.hbs中x-option改为xs.option并在#x-select后加 as |xs|
 https://forums.bignerdranch.com/t/install-emberx-select-p-437/10860/4
 
@@ -91,3 +89,9 @@ D:\github\htlbvd\fewd\tracker\app\models\sighting.js打错字
 Error: Ember Data Request POST https://bnr-tracker-api.herokuapp.com/api/sightings returned a 500
 Payload (application/vnd.api+json; charset=utf-8)
 x-select版本太新
+
+app/routes/sightings/edit.js没有，有app/routes/sighting/edit.js
+templates/sightings/edit.hbs.....
+controllers/sightings/edit.js......
+
+
