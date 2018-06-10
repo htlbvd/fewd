@@ -1,23 +1,5 @@
-<h1>New Sighting</h1>
+{{!-- <h1>New Sighting</h1>
 <form {{action "create" on="submit"}}>
-  {{!-- <div class="form-group">
-    <label for="name">Cryptid</label>
-    {{#x-select value=model.sighting.cryptid class="form-control" }}
-      {{#x-option}}Select Cryptid{{/x-option}}
-      {{#each model.cryptids as |cryptid|}}
-        {{#x-option value=cryptid}}{{cryptid.name}}{{/x-option}}
-      {{/each}}
-    {{/x-select}}
-  </div>
-  <div class="form-group">
-    <label>Witnesses</label>
-    {{#x-select value=model.sighting.witnesses multiple=true class="form-control" }}
-      {{#x-option}}Select Witnesses{{/x-option}}
-      {{#each model.witnesses as |witness|}}
-        {{#x-option value=witness}}{{witness.fullName}}{{/x-option}}
-      {{/each}}
-    {{/x-select}}
-  </div> --}}
   <div class="form-group">
     <label for="name">Cryptid</label>
     {{#x-select  action="didMakeCryptidSelection" on="change" class="form-control" as |xs|}}
@@ -34,6 +16,35 @@
         {{#xs.option value=witness}}{{witness.fullName}}{{/xs.option}}
       {{/each}}
     {{/x-select}}
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location</label>{{input value=model.sighting.location type="text" class="form-control" name="location" required=true}}
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Create</button>
+  <button {{action 'cancel'}} class="btn btn-link btn-block">Cancel</button>
+</form> --}}
+
+<h1>New Sighting</h1>
+<form {{action "create" on="submit"}}>
+  <div class="form-group">
+    <label for="name">Cryptid</label>
+    {{input value=model.sighting.cryptid type="text" class="form-control" required=true}}
+    {{!-- {{#x-select value=model.sighting.cryptid class="form-control" as |xs|}}
+      {{#x-option}}Select Cryptid{{/x-option}}
+      {{#each model.cryptids as |cryptid|}}
+        {{#x-option value=cryptid}}{{cryptid.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}} --}}
+  </div>
+  <div class="form-group">
+    <label>Witnesses</label>
+    {{input value=model.sighting.witnesses type="text" class="form-control" required=true}}
+    {{!-- {{#x-select value=model.sighting.witnesses multiple=true class="form-control" as |xs|}}
+      {{#each model.witnesses as |witness|}}
+        {{#x-option value=witness}}{{witnes-fullName}}{{/x-option}}
+      {{/each}}
+    {{/x-select}} --}}
   </div>
 
   <div class="form-group">

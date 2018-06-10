@@ -94,4 +94,6 @@ app/routes/sightings/edit.js没有，有app/routes/sighting/edit.js
 templates/sightings/edit.hbs.....
 controllers/sightings/edit.js......
 
+使用emberx-select@2.2.3时ember s时Cannot read property 'indexOf' of undefined
+使用emberx-select时点击creat时Error: Ember Data Request POST https。。。 returned a 500
 
